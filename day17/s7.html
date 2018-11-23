@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <input id="i1" type="button" value="开关">
+    <div class="c1 hide">asdadad</div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $('#i1').click(function(){
+            $('.c1').toggleClass('hide');//如果有hide，就删除，没有hide，就添加
+        })
+    </script>
+</body>
+</html>

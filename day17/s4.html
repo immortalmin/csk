@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="i2">
+        <p>
+            <span id="i1">Hello</span>
+        </p>
+        <span>Hello Again</span>
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $('#i1').parents()//找到所有的祖宗
+        $('#i1').parentsUntil('#i2')//找到到i1为止的祖宗
+    </script>
+</body>
+</html>

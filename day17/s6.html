@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="i1"><a>123</a>asdfhgjhk</div>
+    <input id="i2" type="text">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $('.i1').text()//获取文本内容："123asdfhgjhk"
+        $('.i1').html()//获取标签内的html："<a>123</a>asdfhgjhk"
+        $('.i1').text(123456)//设置文本内容
+        $('.i1').html('<p>123</p>')//为标签赋值，html
+        $('#i2').val()//获取input标签的内容
+        $('#i2').val(123)//设置input标签的内容
+    </script>
+</body>
+</html>

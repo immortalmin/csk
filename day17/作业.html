@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #edit{
+            background-color: blue;
+        }
+        .editing{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="全选" id="checkall">
+    <input type="button" value="反选" id="reverseall">
+    <input type="button" value="取消" id="cancelall">
+    <input type="button" value="编辑模式" id="edit">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>选项</th>
+                <th>IP</th>
+                <th>PORT</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1.1.1.1</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1.1.1.1</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1.1.1.1</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1.1.1.1</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1.1.1.1</td>
+                <td>80</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        //全选
+        $('#checkall').click(function(){
+            $('#tb input').prop('checked',true);
+        });
+        //反选
+        $('#reverseall').click(function(){
+            $('#tb input').each(function(){
+                if($(this).prop('checked')) $(this).prop('checked',false);
+                else $(this).prop('checked',true);
+            });
+        });
+        //取消
+        $('#cancelall').click(function(){
+            $('#tb input').prop('checked',false);
+        });
+        //编辑模式
+        $('#edit').click(function(){
+            if($(this).hasClass('editing')){//表示在编辑状态中退出编辑
+                $(this).removeClass('editing');
+                $(this).val("编辑模式");
+                $('#tb tr').each(function(){
+                    $('td:gt(0)',this).each(function(){
+                        var test = $('input',this).val();
+                        $('input',this).remove();
+                        $(this).text(test);
+                    })
+                });
+            }else{//表示开始编辑
+                $(this).addClass('editing');
+                $(this).val("编辑中");
+                $('#tb tr').each(function(){
+                    $('td:gt(0)',this).each(function(){
+                        var test = $(this).text();//获取IP和PORT的值
+                        var newhtml = document.createElement('input');
+                        newhtml.setAttribute('value',test);
+                        $(this).text('');
+                        $(this).append(newhtml);
+                    })
+                });
+            }
+        })
+    </script>
+</body>
+</html>

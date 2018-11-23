@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <a onclick="return ClickOn()" href="www.baidu.com">百度一下</a>
+    <a id="i1" href="www.baidu.com">百度</a>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        function ClickOn(){
+            alert(123);
+            return false;
+        }
+        $('#i1').click(function(){
+            alert(456);
+            return false;
+        })
+    </script>
+</body>
+</html>

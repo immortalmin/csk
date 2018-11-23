@@ -1,0 +1,30 @@
+mysql操作:
+    mysql -u root -p      连接mysql（-p后面好像可以直接加密码快速登录）
+    desc 表名称;          查看表结构
+    select * from user \G;查看表数据
+    use 数据库名:选择要操作的mysql数据库，使用该命令后mysql命令都只针对该数据库
+    show databases:列出mysql数据库管理系统的数据库列表
+    show tables:显示指定数据库的所有表，使用该命令前需要使用use命令来选择要操作的数据库
+    show columns from 数据库：显示数据库的属性，属性类型，主键信息，是否为NULL，默认值等其他信息
+    grant all on 表名称.* to '用户名'@'%' identified by '密码'; 授权用户
+    create database testdb charset "utf8"; #创建一个叫testdb的数据库，且让其支持中文
+    drop database testdb; #删除数据库
+    SHOW INDEX FROM 数据表:显示数据表的详细索引信息，包括PRIMARY KEY（主键）。
+
+查询数据：
+    查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。
+    SELECT 命令可以读取一条或者多条记录。
+    你可以使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据
+    你可以使用 WHERE 语句来包含任何条件。
+    你可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。
+    你可以使用 LIMIT 属性来设定返回的记录数。（先limit再offset，使用offset必须先使用limit，好像）
+
+事务：
+    begin:开始事务
+    rollback:回滚
+    commit:结束
+
+索引：
+    show index from 表名称：查看索引
+    create index_name on student(name(32))：创建索引
+    drop index indexName on 表名称：删除索引

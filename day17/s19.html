@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        //jQuery扩展
+        $.extend({
+            'csk':function(){
+                return 'lmm';
+            }
+        });
+        $.fn.extend({//使用方法:$('#i1').csk()
+            'csk':function(){
+                return 'lmm';
+            }
+        });
+        var v = $.csk();
+        alert(v);
+    </script>
+</body>
+</html>

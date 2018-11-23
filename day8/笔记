@@ -1,0 +1,64 @@
+静态方法
+    与类无关，不能访问类里的任何属性和方法
+类方法
+    只能访问类变量
+属性(@property)
+    把一个方法变成一个静态属性
+
+反射
+    hasattr(obj,str)
+    getattr(obj,str)
+    setattr(obj,str,val)
+    delattr(obj,str)
+
+动态导入模块（第八周第一章）
+    import lib#解释器内置
+    aa = __import__('lib.aa')
+    print(aa.aa.C().name)
+
+    import importlib#官方推荐使用
+    aa = importlib.import_module('lib.aa')
+    print(aa.C().name)
+
+
+    family address
+        AF.INET ipv4
+        AF.INET6
+        AF.UNIX    local
+    socket protocol type
+    sock.SOCK_STREAM tcp/ip
+    socket.SOCK_DGRAM  数据报式socket,for UDP
+
+
+    服务端
+    server = socket.socket(AF.INET,sock.SOCK_STREAM)
+    server.bind(localhost,9999)
+    server.listen()
+    while True:
+        conn,addr = server.accept()#阻塞
+        while True:
+            print("new conn",addr)
+            data = conn.recv(1024)#<8192(官方)
+            if not data:
+                break
+            print(data)
+            conn.send(date.upper())
+
+    客户端
+    client = socket.socket()
+    client.connect(serverip,9999)
+    client.send(data)
+    client.recv(data)
+
+
+    socket粘包
+
+    ftp server
+    1.读取文件名
+    2.检测文件是否存在
+    3.打开文件
+    4.检测文件大小
+    5.发送文件大小给客户端
+    6.等客户端确认
+    7.开始边读边发数据
+    8.发送md5

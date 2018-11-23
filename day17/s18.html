@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="s5.html" method="post" id="f1">
+        <div><input name="n1" type="text"></div>
+        <div><input name="n2" type="password"></div>
+        <div><input name="n3" type="text"></div>
+        <div><input name="n4" type="text"></div>
+        <div><input name="n5" type="text"></div>
+        <input type="text">
+        <input type="submit" value="提交">
+    </form>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+//        $(':submit').delegate('','click',function(){
+//            if($(this).prev().val().length==0){
+//                alert("请输入内容！");
+//                return false;
+//            }
+//        })
+        $(':submit').click(function(){
+            $('.error').remove();
+            var flag = true;
+            $('#f1').find('input[type="text"],input[type="password"]').each(function(){
+                var v = $(this).val();
+                if(v.length <= 0){
+                    flag = false;
+                    var tag = document.createElement('span');
+                    tag.className = "error";
+                    tag.innerHTML = "必填";
+                    $(this).after(tag);
+//                    return false;
+                }
+            });
+            return flag;
+        });
+    </script>
+</body>
+</html>

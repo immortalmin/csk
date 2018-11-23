@@ -1,0 +1,21 @@
+线程 内存共享
+线程同时修改同一份数据时必须加锁，mutex互斥锁
+递归锁
+守护线程(slave)服务与非守护线程(master)
+
+queue
+    解耦，使程序直接实现松耦合
+    提高处理效率
+
+    FIFO = first in first out
+    LIFO = lat in first out
+
+io操作不占用CPU
+计算占用CPU
+python多线程不适合CPU密集操作型的任务，适合IO操作密集型的任务
+
+multiprocess
+Queue \ Pipe 只是实现进程间数据的传递
+Manager 实现了进程间数据的共享，即多个进程可以修改同一份数据
+
+IO 多路复用

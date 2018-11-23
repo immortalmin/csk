@@ -1,0 +1,26 @@
+1.定义：
+模块：用来从逻辑上组织python代码（变量，函数，类，逻辑：实现一个功能），本质就是以.py结尾的python文件
+（文件名:test.py，对应的模块名：test)
+包：用来从逻辑上组织模块的，本质就是一个目录（必须带有一个__init__.py文件）
+2.导入方式：
+import module_name
+import module_name,module2_name
+from module_name import *//不建议使用，避免冲突
+from module_name import logger as logger_name//重新起名
+
+3.import本质（路径搜索和搜索路径）:
+导入模块的本质就是把python文件解释一遍
+导入包的本质就是执行该包下的__init__.py文件
+4.导入优化:
+from module_test import test
+
+5.模块的分类：
+a.标准库
+b.开元模块
+c.自定义模块
+
+标准库：
+1.time与datetime
+
+strftime("格式",struct_time)--->"格式化的字符串"
+strptime("格式化的字符串","格式")--->struct_time

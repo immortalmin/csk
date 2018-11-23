@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+     <div id="i1" style="height:100px;width:100px;padding:50px;margin:30px;border:20px solid #dddddd;"></div>
+     <script src="jquery-1.12.4.min.js"></script>
+     <script>
+         console.log($('#i1').height());//纯高度
+         console.log($('#i1').innerHeight());//纯高度+边框
+         console.log($('#i1').outerHeight());//纯高度+表框+内边距
+         console.log($('#i1').outerHeight(true));//纯高度+表框+内边距+外边距
+     </script>
+</body>
+</html>

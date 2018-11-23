@@ -1,0 +1,5 @@
+#Author:immortal luo
+# -*-coding:utf-8 -*-
+import hashlib
+
+m = hash

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="c1">
+        <a></a>
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        //绑定事件
+        //1.绑定click事件
+        $('.c1').bind('click',function(){
+            //...
+        })
+        //2.解绑click事件
+        $('.c1').unbind('click',function(){
+            //...
+        })
+        //3.为.c1下的a标签绑定事件
+        $('.c1').delegate('a','click',function(){
+            //...
+        })
+        //4.为.c1下的a标签解绑事件
+        $('.c1').undelegate('a','click',function(){
+            //...
+        })
+        //5.
+        $('.c1').on('click',function(){
+            //...
+        })
+        //6.
+        $('.c1').off('click',function(){
+            //...
+        })
+    </script>
+</body>
+</html>
